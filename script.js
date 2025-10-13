@@ -220,3 +220,29 @@ window.addEventListener('load', () => {
         document.body.style.opacity = '1';
     }, 100);
 });
+
+// Email Protection - Decode emails to prevent spam bots
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle email links
+    const emailLinks = document.querySelectorAll('.email-link');
+    emailLinks.forEach(link => {
+        const user = link.getAttribute('data-user');
+        const domain = link.getAttribute('data-domain');
+        if (user && domain) {
+            const email = user + '@' + domain;
+            link.href = 'mailto:' + email;
+            link.textContent = email;
+        }
+    });
+
+    // Handle email text spans
+    const emailTexts = document.querySelectorAll('.email-text');
+    emailTexts.forEach(span => {
+        const user = span.getAttribute('data-user');
+        const domain = span.getAttribute('data-domain');
+        if (user && domain) {
+            const email = user + '@' + domain;
+            span.textContent = email;
+        }
+    });
+});
