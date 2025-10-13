@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+
+  <!-- Decorative Shapes -->
+  <circle cx="100" cy="100" r="60" fill="#6366f1" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="80" fill="#8b5cf6" opacity="0.1"/>
+  <circle cx="200" cy="500" r="40" fill="#ec4899" opacity="0.1"/>
+  <circle cx="1000" cy="100" r="50" fill="#6366f1" opacity="0.08"/>
+
+  <!-- Main Content Container -->
+  <rect x="100" y="140" width="1000" height="350" fill="#f9fafb" rx="20" stroke="#e5e7eb" stroke-width="2"/>
+
+  <!-- Science Icon -->
+  <g transform="translate(180, 220)">
+    <circle cx="40" cy="40" r="50" fill="#6366f1" opacity="0.15"/>
+    <text x="40" y="60" font-size="60" text-anchor="middle">🔬</text>
+  </g>
+
+  <!-- Main Text -->
+  <text x="350" y="260" font-family="Poppins, Arial, sans-serif" font-size="64" font-weight="700" fill="#000000">Müjde Bayrak</text>
+  <text x="350" y="320" font-family="Poppins, Arial, sans-serif" font-size="36" font-weight="600" fill="#333333">Fen Bilimleri Özel Ders</text>
+  <text x="350" y="370" font-family="Poppins, Arial, sans-serif" font-size="28" font-weight="400" fill="#6b7280">Bursa | 8 Yıl Deneyim | LGS Hazırlık</text>
+
+  <!-- Contact Info -->
+  <g transform="translate(350, 420)">
+    <text x="0" y="0" font-family="Poppins, Arial, sans-serif" font-size="24" fill="#6366f1">📱 0544 253 24 20</text>
+    <text x="320" y="0" font-family="Poppins, Arial, sans-serif" font-size="24" fill="#6366f1">🌐 www.mujdebayrak.com</text>
+  </g>
+
+  <!-- Bottom Stats -->
+  <g transform="translate(180, 540)">
+    <rect x="0" y="-30" width="200" height="40" fill="#6366f1" rx="8" opacity="0.1"/>
+    <text x="100" y="0" font-family="Poppins, Arial, sans-serif" font-size="18" font-weight="600" fill="#000000" text-anchor="middle">100+ Öğrenci</text>
+  </g>
+  <g transform="translate(420, 540)">
+    <rect x="0" y="-30" width="200" height="40" fill="#8b5cf6" rx="8" opacity="0.1"/>
+    <text x="100" y="0" font-family="Poppins, Arial, sans-serif" font-size="18" font-weight="600" fill="#000000" text-anchor="middle">%95 Başarı</text>
+  </g>
+  <g transform="translate(660, 540)">
+    <rect x="0" y="-30" width="200" height="40" fill="#ec4899" rx="8" opacity="0.1"/>
+    <text x="100" y="0" font-family="Poppins, Arial, sans-serif" font-size="18" font-weight="600" fill="#000000" text-anchor="middle">8 Yıl Tecrübe</text>
+  </g>
+</svg>
