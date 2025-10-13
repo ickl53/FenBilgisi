@@ -561,6 +561,12 @@ section {
     display: block;
 }
 
+.form-message.info {
+    background: #dbeafe;
+    color: #1e40af;
+    display: block;
+}
+
 /* Footer */
 .footer {
     background: var(--text-dark);

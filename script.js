@@ -67,66 +67,44 @@ document.querySelectorAll('.course-card, .feature-card, .testimonial-card').forE
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
+// Client-side validation before FormSubmit
+contactForm.addEventListener('submit', function(e) {
     // Get form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        grade: document.getElementById('grade').value,
-        message: document.getElementById('message').value
-    };
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const grade = document.getElementById('grade').value;
 
     // Validate form
-    if (!formData.name || !formData.email || !formData.phone || !formData.grade) {
+    if (!name || !email || !phone || !grade) {
+        e.preventDefault();
         showMessage('Lütfen tüm zorunlu alanları doldurun.', 'error');
-        return;
+        return false;
     }
 
     // Validate email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
+    if (!emailRegex.test(email)) {
+        e.preventDefault();
         showMessage('Lütfen geçerli bir e-posta adresi girin.', 'error');
-        return;
+        return false;
     }
 
     // Validate phone (Turkish phone format)
     const phoneRegex = /^[0-9]{10,11}$/;
-    const cleanPhone = formData.phone.replace(/[^\d]/g, '');
+    const cleanPhone = phone.replace(/[^\d]/g, '');
     if (!phoneRegex.test(cleanPhone)) {
-        showMessage('Lütfen geçerli bir telefon numarası girin.', 'error');
-        return;
+        e.preventDefault();
+        showMessage('Lütfen geçerli bir telefon numarası girin (10-11 rakam).', 'error');
+        return false;
     }
 
-    // In a real implementation, you would send this data to a server
-    // For now, we'll simulate a successful submission
-    try {
-        // Simulate API call
-        await simulateFormSubmission(formData);
+    // Show submitting message
+    showMessage('Gönderiliyor...', 'info');
 
-        showMessage('Mesajınız başarıyla gönderildi! En kısa sürede sizinle iletişime geçeceğim.', 'success');
-        contactForm.reset();
-
-        // Log to console (in production, this would be sent to a server)
-        console.log('Form submitted:', formData);
-
-    } catch (error) {
-        showMessage('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.', 'error');
-    }
+    // FormSubmit will handle the actual submission
+    return true;
 });
-
-// Simulate form submission (replace with actual API call in production)
-function simulateFormSubmission(data) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            // In production, send to your backend/email service
-            // Example: fetch('/api/contact', { method: 'POST', body: JSON.stringify(data) })
-            resolve();
-        }, 1000);
-    });
-}
 
 // Show form message
 function showMessage(message, type) {
